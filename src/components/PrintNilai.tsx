@@ -92,7 +92,7 @@ export function PrintNilai({ student }: { student: Student }) {
         </tbody>
       </table>
 
-      <div className="mb-15 page-break-inside-avoid">
+      <div className="pt-4 mb-15 page-break-inside-avoid">
         <h3 className="font-bold mb-2">D. PRAKTEK KERJA LAPANGAN (PKL)</h3>
         <table className="w-full border-collapse border border-black text-xs">
           <thead className="bg-gray-100 font-bold text-center">
