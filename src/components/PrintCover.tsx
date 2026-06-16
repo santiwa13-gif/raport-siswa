@@ -17,11 +17,11 @@ export function PrintCover({ student }: { student: Student }) {
       )}
 
       <div>
-        <h1 className="text-3xl font-bold tracking-widest mt-8">RAPOR PESERTA DIDIK</h1>
-        <h2 className="text-2xl font-bold mt-8">SEKOLAH MENENGAH KEJURUAN<br/>(SMK)<br/>{schoolInfo.name}</h2>
+        <h1 className="text-3xl font-bold tracking-widest mt-6">RAPOR PESERTA DIDIK</h1>
+        <h2 className="text-2xl font-bold mt-6">SEKOLAH MENENGAH KEJURUAN<br/>(SMK)<br/>{schoolInfo.name}</h2>
       </div>
 
-      <div className="text-left w-2/3 mt-10 text-lg">
+      <div className="text-left w-2/3 mt-6 text-lg">
         <table className="w-full font-semibold">
           <tbody>
             <tr>
@@ -43,15 +43,15 @@ export function PrintCover({ student }: { student: Student }) {
         </table>
       </div>
 
-      <div className="text-center w-2/3 mt-10">
+      <div className="text-center w-2/3 mt-6">
         <p className="text-lg">Nama Peserta Didik</p>
         <div className="border border-black font-bold text-2xl py-3 mt-2 uppercase">{student.name}</div>
         
-        <p className="text-lg mt-8">NIS/NISN</p>
+        <p className="text-lg mt-6">NIS/NISN</p>
         <div className="border border-black font-bold text-xl py-2 mt-2">{student.nis} / {student.nisn}</div>
       </div>
 
-      <div className="mt-auto mb-10 text-xl font-bold">
+      <div className="mt-6 mb-10 text-xl font-bold">
         KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN<br/>
         REPUBLIK INDONESIA
       </div>
