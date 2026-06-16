@@ -6,10 +6,10 @@ export function PrintIdentitas({ student }: { student: Student }) {
   const { schoolInfo } = useAppStore();
   
   return (
-    <div className="pt-8 text-black">
-      <h2 className="text-xl font-bold text-center uppercase mb-20">KETERANGAN TENTANG DIRI PESERTA DIDIK</h2>
+    <div className="pt-4 text-black">
+      <h2 className="text-xl font-bold text-center uppercase mb-10">KETERANGAN TENTANG DIRI PESERTA DIDIK</h2>
 
-      <table className="w-full text-[15px] space-y-1 border-separate border-spacing-y-2">
+      <table className="w-full text-[15px] space-y-0.5 border-separate border-spacing-y-2">
         <tbody>
           <tr><td className="w-8 align-top">1.</td><td className="w-64">Nama Peserta Didik (Lengkap)</td><td className="w-4">:</td><td className="font-bold">{student.name}</td></tr>
           <tr><td>2.</td><td>NIS/NISN</td><td>:</td><td>{student.nis} / {student.nisn}</td></tr>
@@ -39,7 +39,7 @@ export function PrintIdentitas({ student }: { student: Student }) {
         </tbody>
       </table>
 
-      <div className="flex mt-5 ml-32">
+      <div className="flex mt-2 ml-32">
         <div className="w-32 h-40 border border-black flex items-center justify-center text-sm mr-24 shrink-0">
           <div className="text-center text-gray-500">Pas Foto<br/>3 x 4 cm</div>
         </div>
