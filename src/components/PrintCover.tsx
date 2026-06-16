@@ -21,7 +21,7 @@ export function PrintCover({ student }: { student: Student }) {
         <h2 className="text-2xl font-bold mt-8">SEKOLAH MENENGAH KEJURUAN<br/>(SMK)<br/>{schoolInfo.name}</h2>
       </div>
 
-      <div className="text-left w-2/3 mt-24 text-lg">
+      <div className="text-left w-2/3 mt-18 text-lg">
         <table className="w-full font-semibold">
           <tbody>
             <tr>
@@ -43,7 +43,7 @@ export function PrintCover({ student }: { student: Student }) {
         </table>
       </div>
 
-      <div className="text-center w-2/3 mt-24">
+      <div className="text-center w-2/3 mt-18">
         <p className="text-lg">Nama Peserta Didik</p>
         <div className="border border-black font-bold text-2xl py-3 mt-2 uppercase">{student.name}</div>
         
