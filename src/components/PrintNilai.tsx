@@ -154,7 +154,7 @@ export function PrintNilai({ student }: { student: Student }) {
 
         <div className="mb-6 page-break-inside-avoid">
           <h3 className="font-bold mb-2 uppercase">F. Ekstrakurikuler</h3>
-          <table className="w-full border-collapse border border-black text-xs">
+          <table className="w-full border-collapse border border-black text-sm">
             <thead className="bg-gray-100 text-center font-bold">
               <tr>
                 <th className="border border-black p-1 w-10">No.</th>
@@ -178,7 +178,7 @@ export function PrintNilai({ student }: { student: Student }) {
 
         <div className="mb-6 page-break-inside-avoid">
           <h3 className="font-bold mb-2 uppercase">G. Ketidakhadiran</h3>
-          <table className="w-1/2 border-collapse border border-black text-xs">
+          <table className="w-1/2 border-collapse border border-black text-sm">
             <tbody>
               <tr><td className="border border-black p-1 px-2 w-48">Sakit</td><td className="border border-black p-1 text-center w-16">{att.sakit || '-'}</td><td className="border border-black p-1">hari</td></tr>
               <tr><td className="border border-black p-1 px-2">Izin</td><td className="border border-black p-1 text-center">{att.izin || '-'}</td><td className="border border-black p-1">hari</td></tr>
