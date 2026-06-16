@@ -7,9 +7,9 @@ export function PrintIdentitas({ student }: { student: Student }) {
   
   return (
     <div className="pt-4 text-black">
-      <h2 className="text-xl font-bold text-center uppercase mb-10">KETERANGAN TENTANG DIRI PESERTA DIDIK</h2>
+      <h2 className="text-xl font-bold text-center uppercase mb-4">KETERANGAN TENTANG DIRI PESERTA DIDIK</h2>
 
-      <table className="w-full text-[15px] space-y-0.5 border-separate border-spacing-y-2">
+      <table className="w-full text-[15px] space-y-2 border-separate border-spacing-y-1">
         <tbody>
           <tr><td className="w-8 align-top">1.</td><td className="w-64">Nama Peserta Didik (Lengkap)</td><td className="w-4">:</td><td className="font-bold">{student.name}</td></tr>
           <tr><td>2.</td><td>NIS/NISN</td><td>:</td><td>{student.nis} / {student.nisn}</td></tr>
