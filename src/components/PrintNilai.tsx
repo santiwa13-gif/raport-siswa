@@ -123,7 +123,7 @@ export function PrintNilai({ student }: { student: Student }) {
       <div className="page-break-before-auto">
         <div className="mb-6">
           <h3 className="font-bold mb-2 uppercase">E. Kokurikuler</h3>
-          <table className="w-full border-collapse border border-black text-xs">
+          <table className="w-full border-collapse border border-black text-sm">
             <tbody>
               {studentKoku.find(k => k.no === 0) && studentKoku.find(k => k.no === 0)?.deskripsi && (
                 <tr>
