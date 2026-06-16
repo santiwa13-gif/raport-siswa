@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "TeacherData": {
+      "title": "TeacherData",
+      "description": "The data container for a single homeroom teacher.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The owner's UID" },
+        "schoolInfo": { "type": "string" },
+        "students": { "type": "string" },
+        "subjects": { "type": "string" },
+        "scores": { "type": "string" },
+        "pkls": { "type": "string" },
+        "ekskuls": { "type": "string" },
+        "kokurikulers": { "type": "string" },
+        "attendances": { "type": "string" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "teachers/{userId}": {
+      "schema": { "$ref": "#/entities/TeacherData" },
+      "description": "Stores the teacher state data as stringified JSON fields for ease of state sync."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Raport Digital SMK",
+  "description": "Sistem manajemen nilai raport digital untuk SMK. Menyimpan data di localStorage, fitur cetak PDF, dashboard pro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
