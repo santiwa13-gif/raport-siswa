@@ -13,10 +13,11 @@ import { CatatanWaliKelas } from './components/CatatanWaliKelas';
 import { RekapNilai } from './components/RekapNilai';
 import { RaportSiswa } from './components/RaportSiswa';
 import { Login } from './components/Login';
-import { LayoutDashboard, Users, Building, BookOpen, Book, Star, FileEdit, FileText, Activity, Trophy, Briefcase, MessageSquare, Table, Printer, Settings, LogOut } from 'lucide-react';
+import { ClassSelection } from './components/ClassSelection';
+import { LayoutDashboard, Users, Building, BookOpen, Book, Star, FileEdit, FileText, Activity, Trophy, Briefcase, MessageSquare, Table, Printer, Settings, LogOut, ArrowLeft } from 'lucide-react';
 
 export default function App() {
-  const { schoolInfo, resetAllData, user, loading, logout } = useAppStore();
+  const { schoolInfo, resetAllData, user, loading, logout, currentClassId, setCurrentClassId, classes } = useAppStore();
   const [currentView, setCurrentView] = useState('dashboard');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -29,6 +30,12 @@ export default function App() {
   if (!user) {
     return <Login />;
   }
+
+  if (!currentClassId) {
+    return <ClassSelection />;
+  }
+
+  const currentClass = classes.find(c => c.id === currentClassId);
 
   const NavigationItem = ({ id, label, icon: Icon }: { id: string, label: string, icon: any }) => (
     <button
@@ -73,8 +80,9 @@ export default function App() {
       `}>
         <div className="p-6 pb-2 text-center items-center flex flex-col border-b border-green-800/50 mb-2">
           {schoolInfo.logo && <img src={schoolInfo.logo} alt="Logo" className="w-20 h-20 bg-white p-1 rounded-full mb-3 object-contain" />}
-          <h1 className="text-xl font-bold tracking-tight">E-Raport SMK</h1>
+          <h1 className="text-xl font-bold tracking-tight">{currentClass?.name || 'E-Raport SMK'}</h1>
           <p className="text-green-200 text-[10px] mt-1 uppercase tracking-widest bg-green-900/50 p-1.5 rounded truncate w-full" title={schoolInfo.name}>{schoolInfo.name}</p>
+          <div className="mt-2 text-xs opacity-75">ID Kelas: {currentClassId}</div>
         </div>
         
         <nav className="flex-1 px-3 py-2 space-y-1 overflow-y-auto custom-scrollbar">
@@ -104,6 +112,12 @@ export default function App() {
           <div className="text-green-300 text-xs px-2 py-1 bg-green-900/30 rounded truncate" title={user.email || ''}>
             👤 {user.email}
           </div>
+          <button
+            onClick={() => setCurrentClassId(null)}
+            className="w-full flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-left text-white hover:bg-green-800/50 transition-colors text-sm"
+          >
+            <span className="flex items-center gap-3"><ArrowLeft size={18} /> Ganti Kelas</span>
+          </button>
           <button
             onClick={logout}
             className="w-full flex items-center justify-between gap-3 px-4 py-2.5 rounded-lg text-left text-white hover:bg-green-800/50 transition-colors text-sm"

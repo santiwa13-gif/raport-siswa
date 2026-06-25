@@ -92,7 +92,7 @@ export function PrintNilai({ student }: { student: Student }) {
         </tbody>
       </table>
 
-      <div className="pt-8 mb-8 page-break-inside-avoid">
+      <div className="mb-8 page-break-inside-avoid">
         <h3 className="font-bold mb-2">D. PRAKTEK KERJA LAPANGAN (PKL)</h3>
         <table className="w-full border-collapse border border-black text-xs">
           <thead className="bg-gray-100 font-bold text-center">
@@ -123,7 +123,7 @@ export function PrintNilai({ student }: { student: Student }) {
       <div className="page-break-before-auto">
         <div className="mb-6">
           <h3 className="font-bold mb-2 uppercase">E. Kokurikuler</h3>
-          <table className="w-full border-collapse border border-black text-sm">
+          <table className="w-full border-collapse border border-black text-xs">
             <tbody>
               {studentKoku.find(k => k.no === 0) && studentKoku.find(k => k.no === 0)?.deskripsi && (
                 <tr>
@@ -154,7 +154,7 @@ export function PrintNilai({ student }: { student: Student }) {
 
         <div className="mb-6 page-break-inside-avoid">
           <h3 className="font-bold mb-2 uppercase">F. Ekstrakurikuler</h3>
-          <table className="w-full border-collapse border border-black text-sm">
+          <table className="w-full border-collapse border border-black text-xs">
             <thead className="bg-gray-100 text-center font-bold">
               <tr>
                 <th className="border border-black p-1 w-10">No.</th>
@@ -178,7 +178,7 @@ export function PrintNilai({ student }: { student: Student }) {
 
         <div className="mb-6 page-break-inside-avoid">
           <h3 className="font-bold mb-2 uppercase">G. Ketidakhadiran</h3>
-          <table className="w-1/2 border-collapse border border-black text-sm">
+          <table className="w-1/2 border-collapse border border-black text-xs">
             <tbody>
               <tr><td className="border border-black p-1 px-2 w-48">Sakit</td><td className="border border-black p-1 text-center w-16">{att.sakit || '-'}</td><td className="border border-black p-1">hari</td></tr>
               <tr><td className="border border-black p-1 px-2">Izin</td><td className="border border-black p-1 text-center">{att.izin || '-'}</td><td className="border border-black p-1">hari</td></tr>
@@ -187,14 +187,23 @@ export function PrintNilai({ student }: { student: Student }) {
           </table>
         </div>
 
-        <div className="mb-8 page-break-inside-avoid">
-          <h3 className="font-bold mb-2 uppercase">H. Kenaikan Kelas</h3>
-          <div className="border border-black p-3 text-sm">
-            Berdasarkan pencapaian kompetensi pada Semester 1 (Ganjil) dan Semester 2 (Genap), Murid ditetapkan :<br/>
-            <strong>Naik / <strike>Tidak Naik</strike> ke kelas : {att.naikKelas}</strong><br/>
-            <em className="text-xs">*)Coret yang tidak perlu</em>
+        {schoolInfo.semester.toLowerCase().includes('1') || schoolInfo.semester.toLowerCase().includes('ganjil') ? (
+          <div className="mb-8 page-break-inside-avoid">
+            <h3 className="font-bold mb-2 uppercase">H. CATATAN WALI KELAS</h3>
+            <div className="border border-black p-3 text-sm">
+              {att.catatanWaliKelas || '-'}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="mb-8 page-break-inside-avoid">
+            <h3 className="font-bold mb-2 uppercase">H. Kenaikan Kelas</h3>
+            <div className="border border-black p-3 text-sm">
+              Berdasarkan pencapaian kompetensi pada Semester 1 (Ganjil) dan Semester 2 (Genap), Murid ditetapkan :<br/>
+              <strong>Naik / <strike>Tidak Naik</strike> ke kelas : {att.naikKelas}</strong><br/>
+              <em className="text-xs">*)Coret yang tidak perlu</em>
+            </div>
+          </div>
+        )}
 
         <div className="flex justify-between mt-12 grid-cols-2 text-sm pr-12 pl-12 page-break-inside-avoid">
           <div className="text-center">

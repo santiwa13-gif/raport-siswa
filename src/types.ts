@@ -88,6 +88,13 @@ export interface Kokurikuler {
   deskripsi: string;
 }
 
+export interface ClassData {
+  id: string;
+  name: string;
+  ownerId: string;
+  ownerEmail: string;
+}
+
 export interface Attendance {
   studentNis: string;
   sakit: number;
